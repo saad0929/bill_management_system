@@ -3,8 +3,20 @@ include 'config.php';
 
 if(isset($_POST['submit'])){
 
+   $ename = $_POST['ename'];
+   $byear = $_POST['byear'];
+   $cexam = $_POST['cexam'];
    $cname = $_POST['cname'];
-   $ccode = $_POST['ccode'];
+   $qmfnumber = $_POST['qmfnumber'];
+   $qmhnumber = $_POST['qmhnumber'];
+   $avfnumber = $_POST['avfnumber'];
+   $avhnumber = $_POST['avhnumber'];
+   $ename = $_POST['ename'];
+   $byear = $_POST['byear'];
+   $cexam = $_POST['cexam'];
+   $email = $_POST['email'];
+   $ename = $_POST['ename'];
+   $byear = $_POST['byear'];
    $cexam = $_POST['cexam'];
    $email = $_POST['email'];
    $labstatus = $_POST['labstatus'];
@@ -44,30 +56,39 @@ if(isset($_POST['submit'])){
 <body>
    
 <div class="form-container">
-
    <form action="#" method="post" enctype="multipart/form-data">
       <div>
          <div>
             <img src="images/du.png" alt="DU Logo" height="100px" width="80px">
          </div>
          <div>
-            <h3>Register For New Course</h3>
+            <h3>Form for Bill management</h3>
          </div>
       </div>
-      <?php
-      if(isset($message)){
-         foreach($message as $message){
-            echo '<div class="message">'.$message.'</div>';
-         }
-      }
-      ?>
-      <div class="message">
-    </div>
-      <input type="text" name="ename" placeholder="enter exam name" class="box" required>
-      <input type="text" name="year" placeholder="enter year of exam" class="box" required>
-      <input type="number" name="cexam" placeholder="enter course name" class="box" required>
-      <input type="email" name="email" placeholder="enter amount" class="box" required>
-      <input type="submit" name="submit" value="Submit Form" class="btn">
+      <div class="flex">
+         <input type="text" name="ename" placeholder="enter exam name" class="box" required>
+         <input type="text" name="byear" placeholder="enter year of exam" class="box" required>
+         <input type="text" name="cname" placeholder="enter course name" class="box" required>
+         <p>Question Making</p>
+         <input type="number" name="qmfnumber" placeholder="enter number of full question" class="box" required>
+         <input type="number" name="qmhnumber" placeholder="enter number of half question" class="box" required>
+         <p>Bill for Answershit Evaluation</p>
+         <input type="number" name="avfnumber" placeholder="enter number of full answershit evaluation" class="box" required>
+         <input type="number" name="avhnumber" placeholder="enter number of half answershit evaluation" class="box" required>
+         <p>Bill for Practical Exam</p>
+         <input type="text" name="pecenter" placeholder="enter name of center" class="box" required>
+         <input type="number" name="penumber" placeholder="enter number of students" class="box" required>
+         <p>Bill for Viva</p>
+         <input type="text" name="vcenter" placeholder="enter name of center" class="box" required>
+         <input type="number" name="vnumber" placeholder="enter number of students" class="box" required>
+         <p>Bill for Result Making</p>
+         <input type="number" name="rmnumber" placeholder="enter number of students" class="box" required>
+         <p>Bill for Inspection of Result </p>
+         <input type="number" name="irnumber" placeholder="enter number of students" class="box" required>
+         <p>Others</p>
+         <input type="number" name="oamount" placeholder="enter amount" class="box" required>
+         <input type="submit" name="submit" value="Submit Form" class="btn">
+      </div>
    </form>
 
 </div>
