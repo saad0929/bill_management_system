@@ -1,0 +1,50 @@
+CREATE TABLE `user_form` (
+  `id`  int(255) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `mobile` varchar(100) NOT NULL,
+  `designation` varchar(100) NOT NULL,
+  `department` varchar(100) NOT NULL,
+  `caddress` varchar(100) NOT NULL,
+  `paddress` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `image` varchar(100) NOT NULL,
+  `total_number_courses` int(100) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL,
+  `status` varchar(100) NOT NULL,
+   PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `courses` (
+  `cid`  int(255) NOT NULL AUTO_INCREMENT,
+  `cname` varchar(100) NOT NULL,
+  `course_exam_number` int(100) NOT NULL,
+  `lab_status` varchar(100) NOT NULL,
+  `course_teacher_id` int NOT NULL,
+  PRIMARY KEY (`cid`),
+  CONSTRAINT `fk_course_teacher_id`
+    FOREIGN KEY (`course_teacher_id`) REFERENCES `user_form`(`id`)
+    ON DELETE CASCADE
+    ON UPDATE RESTRICT
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE `course_exam` (
+  `cid`  int(255) NOT NULL AUTO_INCREMENT,
+  `cname` varchar(100) NOT NULL,
+  `cfaculty` varchar(100) NOT NULL,
+  `status` varchar(100) NOT NULL,
+  PRIMARY KEY (`cid`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+
+
+
+//Command fro database connection
+cd mysql
+cd bin
+mysql -u root -p -h localhost
+
+
+
